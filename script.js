@@ -1,5 +1,76 @@
-
 document.addEventListener("DOMContentLoaded", function () {
+
+    // =====================================
+    // 0. HAMBURGER NAVIGATION
+    // =====================================
+
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navbar = document.querySelector(".navbar");
+    const menuBackdrop = document.querySelector(".menu-backdrop");
+
+    function closeNavigation() {
+        if (!menuToggle || !navbar) return;
+
+        menuToggle.classList.remove("is-open");
+        navbar.classList.remove("is-open");
+
+        if (menuBackdrop) {
+            menuBackdrop.classList.remove("is-visible");
+        }
+
+        document.body.classList.remove("menu-open");
+
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
+    }
+
+    function openNavigation() {
+        if (!menuToggle || !navbar) return;
+
+        menuToggle.classList.add("is-open");
+        navbar.classList.add("is-open");
+
+        if (menuBackdrop) {
+            menuBackdrop.classList.add("is-visible");
+        }
+
+        document.body.classList.add("menu-open");
+
+        menuToggle.setAttribute("aria-expanded", "true");
+        menuToggle.setAttribute("aria-label", "Close navigation menu");
+    }
+
+    if (menuToggle && navbar) {
+
+        menuToggle.addEventListener("click", function () {
+            const isOpen =
+                menuToggle.getAttribute("aria-expanded") === "true";
+
+            if (isOpen) {
+                closeNavigation();
+            } else {
+                openNavigation();
+            }
+        });
+
+        if (menuBackdrop) {
+            menuBackdrop.addEventListener("click", closeNavigation);
+        }
+
+        navbar.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                closeNavigation();
+            });
+        });
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                closeNavigation();
+            }
+        });
+
+        window.addEventListener("resize", closeNavigation);
+    }
 
     // =====================================
     // 1. CURRENT PAGE NAVIGATION
@@ -17,7 +88,6 @@ document.addEventListener("DOMContentLoaded", function () {
         );
     });
 
-
     // =====================================
     // 2. DYNAMIC COPYRIGHT
     // =====================================
@@ -29,7 +99,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 " Teneyasiree. All Rights Reserved.";
         }
     });
-
 
     // =====================================
     // 3. SMOOTH SCROLLING
@@ -49,7 +118,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
-
 
     // =====================================
     // 4. SCROLL REVEAL ANIMATIONS
@@ -77,11 +145,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 entries.forEach(function (entry) {
 
                     if (entry.isIntersecting) {
-
                         entry.target.classList.add("reveal-visible");
-
                         observer.unobserve(entry.target);
-
                     }
 
                 });
@@ -103,32 +168,11 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
             revealObserver.observe(element);
-
         });
-
     }
 
-
     // =====================================
-    // 5. ANNOUNCEMENT BAR
-    // =====================================
-
-    const announcement = document.createElement("div");
-
-    announcement.className = "announcement-bar";
-
-    announcement.innerHTML =
-        '<span>WELCOME TO TENEYASIREE</span> — ' +
-        'Connecting People, Products and Opportunities.';
-
-    document.body.insertBefore(
-        announcement,
-        document.body.firstChild
-    );
-
-
-    // =====================================
-    // 6. WHATSAPP SUPPORT
+    // 5. WHATSAPP SUPPORT
     // =====================================
 
     const whatsappNumber = "919611474748";
@@ -157,44 +201,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.body.appendChild(whatsapp);
 
-
     // =====================================
-    // 7. CONTACT POPUP STYLES
+    // 6. CONTACT POPUP STYLES
     // =====================================
 
     const styles = document.createElement("style");
 
     styles.textContent = `
-
-        /* =====================================
-           TENEYASIREE BRAND ANNOUNCEMENT BAR
-           ===================================== */
-
-        .announcement-bar {
-            background: linear-gradient(
-                110deg,
-                #115235 0%,
-                #0C7763 42%,
-                #354F9E 72%,
-                #4E49C0 100%
-            ) !important;
-
-            color: #FFFFFF;
-            text-align: center;
-            padding: 10px;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: .4px;
-        }
-
-        .announcement-bar span {
-            color: #FFAD2C;
-        }
-
-
-        /* =====================================
-           WHATSAPP SUPPORT
-           ===================================== */
 
         .whatsapp-support {
             position: fixed;
@@ -214,11 +227,6 @@ document.addEventListener("DOMContentLoaded", function () {
         .whatsapp-support:hover {
             transform: translateY(-4px);
         }
-
-
-        /* =====================================
-           CONTACT MODAL
-           ===================================== */
 
         .contact-modal {
             position: fixed;
@@ -287,7 +295,6 @@ document.addEventListener("DOMContentLoaded", function () {
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-
             font-size: 11px;
             font-weight: 800;
             letter-spacing: 3px;
@@ -317,11 +324,6 @@ document.addEventListener("DOMContentLoaded", function () {
             line-height: 1.8;
             margin-bottom: 25px;
         }
-
-
-        /* =====================================
-           CONTACT FORM GRID
-           ===================================== */
 
         .contact-form-grid {
             display: grid;
@@ -372,11 +374,6 @@ document.addEventListener("DOMContentLoaded", function () {
             resize: vertical;
         }
 
-
-        /* =====================================
-           CONTACT SUBMIT BUTTON
-           ===================================== */
-
         .contact-submit {
             width: 100%;
             margin-top: 24px;
@@ -414,18 +411,7 @@ document.addEventListener("DOMContentLoaded", function () {
             overflow: hidden;
         }
 
-
-        /* =====================================
-           MOBILE RESPONSIVENESS
-           ===================================== */
-
         @media(max-width:600px) {
-
-            .announcement-bar {
-                padding: 9px 12px;
-                font-size: 10px;
-                line-height: 1.6;
-            }
 
             .whatsapp-support {
                 right: 14px;
@@ -451,9 +437,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.head.appendChild(styles);
 
-
     // =====================================
-    // 8. CONTACT POPUP
+    // 7. CONTACT POPUP
     // =====================================
 
     const modal = document.createElement("div");
@@ -589,9 +574,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.body.appendChild(modal);
 
-
     // =====================================
-    // 9. OPEN AND CLOSE POPUP
+    // 8. OPEN AND CLOSE POPUP
     // =====================================
 
     function openContact(event) {
@@ -621,9 +605,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (event.key === "Escape") closeContact();
     });
 
-
     // =====================================
-    // 10. PREPARE EMAIL
+    // 9. PREPARE EMAIL
     // =====================================
 
     modal.querySelector("#teneyasireeContactForm")
