@@ -3723,3 +3723,22 @@ body.menu-open {
         transition: none !important;
     }
 }
+/* =========================================
+   REMOVE FOOTER LOGO FROM ALL PAGES
+========================================= */
+
+.footer img[alt="Teneyasiree Logo"] {
+    display: none !important;
+}
+
+/* Remove the logo container and its extra spacing */
+.footer .container > div:has(> a > img[alt="Teneyasiree Logo"]) {
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Keep footer content spacing clean */
+.footer {
+    padding-top: 35px;
+}
