@@ -14,11 +14,24 @@
     <!-- HEADER -->
     <header class="header">
         <div class="container nav-container">
+
             <a href="index.html" class="logo">
                 <img src="assets/images/teneyasiree-logo.png" alt="Teneyasiree Logo">
             </a>
 
-            <nav class="navbar">
+            <!-- HAMBURGER BUTTON -->
+            <button class="menu-toggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="site-navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- NAVIGATION MENU -->
+            <nav class="navbar" id="site-navigation" aria-label="Main navigation">
                 <a href="index.html" class="active">Home</a>
                 <a href="about.html">About Us</a>
                 <a href="ai-delivery.html">AI Delivery</a>
@@ -29,6 +42,9 @@
                 <a href="contact.html">Contact</a>
                 <a href="contact.html" class="nav-button">Get in Touch</a>
             </nav>
+
+            <div class="menu-backdrop" aria-hidden="true"></div>
+
         </div>
     </header>
 
@@ -71,26 +87,31 @@
         <!-- WHAT CONNECTS US -->
         <section class="home-reach-strip" aria-label="What Teneyasiree connects">
             <div class="home-reach-grid">
+
                 <div class="home-reach-item">
                     <h2>Anything</h2>
                     <p>farm produce, groceries, goods</p>
                 </div>
+
                 <div class="home-reach-item">
                     <h2>Anyone</h2>
                     <p>farmers, shops, families</p>
                 </div>
+
                 <div class="home-reach-item">
                     <h2>Nearby</h2>
                     <p>delivered within your area</p>
                 </div>
+
                 <div class="home-reach-item">
                     <h2>AI-driven</h2>
                     <p>smart routes, fair prices</p>
                 </div>
+
             </div>
         </section>
 
-        <!-- OUR PURPOSE — PREMIUM EDITORIAL SECTION -->
+        <!-- OUR PURPOSE -->
         <section class="home-intro home-intro-new editorial-purpose" id="discover">
             <div class="container">
 
@@ -100,6 +121,7 @@
                 </div>
 
                 <div class="purpose-editorial-grid">
+
                     <div class="purpose-copy">
                         <p class="purpose-kicker">LOCAL CONNECTIONS. WIDER POSSIBILITIES.</p>
 
@@ -132,11 +154,11 @@
                             <img src="assets/images/teneyasiree-purpose-logo.png"
                                  alt="Official Teneyasiree company logo">
                         </div>
-                        </div>
 
                         <div class="purpose-orbit purpose-orbit-one" aria-hidden="true"></div>
                         <div class="purpose-orbit purpose-orbit-two" aria-hidden="true"></div>
                     </div>
+
                 </div>
 
                 <div class="purpose-bottom-line">
@@ -449,13 +471,11 @@
 
     </main>
 
-    <!-- PREMIUM FOOTER WITH LARGER LOGO -->
+    <!-- FOOTER -->
     <footer class="footer">
-
         <div class="container">
 
             <div style="display:flex; justify-content:center; align-items:center; margin-bottom:22px;">
-
                 <a href="index.html" aria-label="Teneyasiree Home"
                    style="display:inline-flex; justify-content:center;">
 
@@ -466,7 +486,6 @@
                     >
 
                 </a>
-
             </div>
 
             <p>
@@ -489,7 +508,6 @@
             </p>
 
         </div>
-
     </footer>
 
     <script src="script.js"></script>
