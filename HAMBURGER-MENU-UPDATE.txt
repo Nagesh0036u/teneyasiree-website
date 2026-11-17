@@ -1,0 +1,14 @@
+TENEYASIREE WEBSITE UPDATE
+
+Changes made:
+- Added the hamburger button to all 10 HTML pages.
+- Added the shared navigation id and backdrop to every page.
+- Kept each page's existing content and active navigation link.
+- Made the header sticky so the logo and hamburger remain visible while scrolling.
+- Kept the existing script.js hamburger interaction and other site behavior unchanged.
+
+To publish:
+1. Extract this ZIP.
+2. Copy the updated website files into your existing project folder, replacing the matching files.
+3. Commit and push the changes to GitHub.
+4. Hard-refresh the website with Ctrl + Shift + R.

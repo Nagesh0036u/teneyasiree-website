@@ -33,7 +33,18 @@
                      alt="Teneyasiree Logo">
             </a>
 
-            <nav class="navbar">
+            <!-- HAMBURGER BUTTON -->
+            <button class="menu-toggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="site-navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="navbar" id="site-navigation" aria-label="Main navigation">
                 <a href="index.html">Home</a>
                 <a href="about.html">About Us</a>
                 <a href="ai-delivery.html">AI Delivery</a>
@@ -46,8 +57,9 @@
             </nav>
 
         </div>
-    </header>
 
+        <div class="menu-backdrop" aria-hidden="true"></div>
+    </header>
 
     <main>
 
@@ -82,7 +94,6 @@
 
         </section>
 
-
         <!-- PROCESS SECTION -->
         <section class="how-content">
 
@@ -100,7 +111,6 @@
                     discover opportunities and connect with others.
                 </p>
 
-
                 <div class="process-grid">
 
                     <div class="process-card">
@@ -116,7 +126,6 @@
 
                     </div>
 
-
                     <div class="process-card">
 
                         <div class="number">02</div>
@@ -130,7 +139,6 @@
 
                     </div>
 
-
                     <div class="process-card">
 
                         <div class="number">03</div>
@@ -143,7 +151,6 @@
                         </p>
 
                     </div>
-
 
                     <div class="process-card">
 
@@ -165,7 +172,6 @@
 
         </section>
 
-
         <!-- USER JOURNEY SECTION -->
         <section class="journey-section">
 
@@ -176,7 +182,6 @@
                 <h2>
                     A Platform Designed for Different People.
                 </h2>
-
 
                 <div class="journey-grid">
 
@@ -191,7 +196,6 @@
 
                     </div>
 
-
                     <div class="journey-card">
 
                         <h3>For Sellers</h3>
@@ -202,7 +206,6 @@
                         </p>
 
                     </div>
-
 
                     <div class="journey-card">
 
@@ -217,7 +220,6 @@
 
                 </div>
 
-
                 <p>
                     A participant may take different roles.
                     For example, the same person can be both
@@ -227,7 +229,6 @@
             </div>
 
         </section>
-
 
         <!-- TECHNOLOGY SECTION -->
         <section class="technology-section" id="technology">
@@ -254,7 +255,6 @@
 
                 </div>
 
-
                 <!-- CURRENT TECHNOLOGY -->
 
                 <div class="technology-subheading">
@@ -266,7 +266,6 @@
                     </span>
 
                 </div>
-
 
                 <div class="technology-grid technology-live-grid">
 
@@ -280,7 +279,6 @@
                         </p>
                     </article>
 
-
                     <article class="technology-card">
                         <span class="technology-icon" aria-hidden="true">02</span>
                         <h3>Voice first</h3>
@@ -291,7 +289,6 @@
                         </p>
                     </article>
 
-
                     <article class="technology-card">
                         <span class="technology-icon" aria-hidden="true">03</span>
                         <h3>8 Indian languages</h3>
@@ -301,7 +298,6 @@
                         </p>
                     </article>
 
-
                     <article class="technology-card">
                         <span class="technology-icon" aria-hidden="true">04</span>
                         <h3>Live location</h3>
@@ -310,7 +306,6 @@
                             delivery partners on the way to your door.
                         </p>
                     </article>
-
 
                     <article class="technology-card">
                         <span class="technology-icon" aria-hidden="true">05</span>
@@ -322,7 +317,6 @@
                         </p>
                     </article>
 
-
                     <article class="technology-card">
                         <span class="technology-icon" aria-hidden="true">06</span>
                         <h3>Video reels</h3>
@@ -333,7 +327,6 @@
                         </p>
                     </article>
 
-
                     <article class="technology-card">
                         <span class="technology-icon" aria-hidden="true">07</span>
                         <h3>Digital payments</h3>
@@ -342,7 +335,6 @@
                             so sellers get paid quickly and safely.
                         </p>
                     </article>
-
 
                     <article class="technology-card">
                         <span class="technology-icon" aria-hidden="true">08</span>
@@ -354,7 +346,6 @@
                     </article>
 
                 </div>
-
 
                 <!-- INNOVATION ROADMAP -->
 
@@ -368,7 +359,6 @@
 
                 </div>
 
-
                 <div class="technology-grid technology-roadmap-grid">
 
                     <article class="technology-card">
@@ -380,7 +370,6 @@
                         </p>
                     </article>
 
-
                     <article class="technology-card">
                         <span class="technology-icon" aria-hidden="true">10</span>
                         <h3>Demand forecasting</h3>
@@ -391,7 +380,6 @@
                         </p>
                     </article>
 
-
                     <article class="technology-card">
                         <span class="technology-icon" aria-hidden="true">11</span>
                         <h3>AI crop and quality check</h3>
@@ -400,7 +388,6 @@
                             problems from a phone photo.
                         </p>
                     </article>
-
 
                     <article class="technology-card">
                         <span class="technology-icon" aria-hidden="true">12</span>
@@ -416,7 +403,6 @@
             </div>
 
         </section>
-
 
         <!-- CLOSING SECTION -->
         <section class="how-closing">
@@ -441,7 +427,6 @@
         </section>
 
     </main>
-
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -485,8 +470,10 @@
 
     </footer>
 
-
     <script src="script.js"></script>
 
 </body>
 </html>
+
+<!-- STICKY HEADER -->
+

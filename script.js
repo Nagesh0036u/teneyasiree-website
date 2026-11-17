@@ -2,11 +2,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // =====================================
     // 0. HAMBURGER NAVIGATION
+    // Opens beside the visible button, even after scrolling.
     // =====================================
 
     const menuToggle = document.querySelector(".menu-toggle");
     const navbar = document.querySelector(".navbar");
     const menuBackdrop = document.querySelector(".menu-backdrop");
+
+    function positionNavigationMenu() {
+        if (!menuToggle || !navbar) return;
+
+        const buttonRect = menuToggle.getBoundingClientRect();
+        const viewportWidth = document.documentElement.clientWidth;
+        const viewportHeight = window.innerHeight;
+        const gap = 8;
+        const edge = 12;
+
+        // Align the dropdown's right edge with the hamburger button.
+        const right = Math.max(edge, viewportWidth - buttonRect.right);
+        const top = Math.min(
+            Math.max(edge, buttonRect.bottom + gap),
+            viewportHeight - 120
+        );
+        const maxHeight = Math.max(140, viewportHeight - top - edge);
+
+        navbar.style.setProperty("--menu-top", top + "px");
+        navbar.style.setProperty("--menu-right", right + "px");
+        navbar.style.setProperty("--menu-max-height", maxHeight + "px");
+    }
 
     function closeNavigation() {
         if (!menuToggle || !navbar) return;
@@ -19,13 +42,15 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         document.body.classList.remove("menu-open");
-
         menuToggle.setAttribute("aria-expanded", "false");
         menuToggle.setAttribute("aria-label", "Open navigation menu");
     }
 
     function openNavigation() {
         if (!menuToggle || !navbar) return;
+
+        // Measure the button at its current viewport position before opening.
+        positionNavigationMenu();
 
         menuToggle.classList.add("is-open");
         navbar.classList.add("is-open");
@@ -35,17 +60,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         document.body.classList.add("menu-open");
-
         menuToggle.setAttribute("aria-expanded", "true");
         menuToggle.setAttribute("aria-label", "Close navigation menu");
     }
 
     if (menuToggle && navbar) {
-
         menuToggle.addEventListener("click", function () {
-            const isOpen =
-                menuToggle.getAttribute("aria-expanded") === "true";
-
+            const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
             if (isOpen) {
                 closeNavigation();
             } else {
@@ -58,18 +79,19 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         navbar.querySelectorAll("a").forEach(function (link) {
-            link.addEventListener("click", function () {
-                closeNavigation();
-            });
+            link.addEventListener("click", closeNavigation);
         });
 
         document.addEventListener("keydown", function (event) {
-            if (event.key === "Escape") {
-                closeNavigation();
-            }
+            if (event.key === "Escape") closeNavigation();
         });
 
-        window.addEventListener("resize", closeNavigation);
+        // Reposition if the viewport changes while the menu is open.
+        window.addEventListener("resize", function () {
+            if (menuToggle.getAttribute("aria-expanded") === "true") {
+                positionNavigationMenu();
+            }
+        });
     }
 
     // =====================================

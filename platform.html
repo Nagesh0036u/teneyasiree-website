@@ -23,7 +23,18 @@
                      alt="Teneyasiree Logo">
             </a>
 
-            <nav class="navbar">
+            <!-- HAMBURGER BUTTON -->
+            <button class="menu-toggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="site-navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="navbar" id="site-navigation" aria-label="Main navigation">
                 <a href="index.html">Home</a>
                 <a href="about.html">About Us</a>
                 <a href="ai-delivery.html">AI Delivery</a>
@@ -36,8 +47,9 @@
             </nav>
 
         </div>
-    </header>
 
+        <div class="menu-backdrop" aria-hidden="true"></div>
+    </header>
 
     <main>
 
@@ -80,7 +92,6 @@
 
         </section>
 
-
         <!-- PLATFORM INTRODUCTION -->
         <section class="platform-content">
 
@@ -100,7 +111,6 @@
                     make local opportunities easier to access.
                 </p>
 
-
                 <!-- PLATFORM FEATURES -->
                 <div class="platform-grid">
 
@@ -117,7 +127,6 @@
 
                     </div>
 
-
                     <div class="platform-card">
 
                         <h3>Flexible Delivery</h3>
@@ -129,7 +138,6 @@
                         </p>
 
                     </div>
-
 
                     <div class="platform-card">
 
@@ -143,7 +151,6 @@
 
                     </div>
 
-
                     <div class="platform-card">
 
                         <h3>Labour Services</h3>
@@ -156,7 +163,6 @@
 
                     </div>
 
-
                     <div class="platform-card">
 
                         <h3>Community Connections</h3>
@@ -168,7 +174,6 @@
                         </p>
 
                     </div>
-
 
                     <div class="platform-card">
 
@@ -187,7 +192,6 @@
             </div>
 
         </section>
-
 
         <!-- PLATFORM HIGHLIGHTS -->
         <section class="platform-highlights">
@@ -236,7 +240,6 @@
 
         </section>
 
-
         <!-- CLOSING SECTION -->
         <section class="platform-closing">
 
@@ -260,7 +263,6 @@
         </section>
 
     </main>
-
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -304,8 +306,10 @@
 
     </footer>
 
-
     <script src="script.js"></script>
 
 </body>
 </html>
+
+<!-- STICKY HEADER -->
+

@@ -23,7 +23,18 @@
                      alt="Teneyasiree Logo">
             </a>
 
-            <nav class="navbar">
+            <!-- HAMBURGER BUTTON -->
+            <button class="menu-toggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="site-navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="navbar" id="site-navigation" aria-label="Main navigation">
                 <a href="index.html">Home</a>
                 <a href="about.html" class="active">About Us</a>
                 <a href="ai-delivery.html">AI Delivery</a>
@@ -36,8 +47,9 @@
             </nav>
 
         </div>
-    </header>
 
+        <div class="menu-backdrop" aria-hidden="true"></div>
+    </header>
 
     <main>
 
@@ -68,7 +80,6 @@
 
         </section>
 
-
         <!-- PLATFORM AT A GLANCE -->
         <section class="about-highlights" aria-label="What Teneyasiree makes possible">
             <div class="container about-highlights-grid">
@@ -90,7 +101,6 @@
                 </article>
             </div>
         </section>
-
 
         <!-- ABOUT INTRODUCTION -->
         <section class="about-content">
@@ -120,7 +130,6 @@
                     and discover useful opportunities within their communities.
                 </p>
 
-
                 <div class="card-grid">
 
                     <div class="info-card">
@@ -135,7 +144,6 @@
 
                     </div>
 
-
                     <div class="info-card">
 
                         <h3>Our Mission</h3>
@@ -147,7 +155,6 @@
                         </p>
 
                     </div>
-
 
                     <div class="info-card">
 
@@ -166,7 +173,6 @@
             </div>
 
         </section>
-
 
         <!-- WHAT WE BELIEVE -->
         <section class="beliefs-section">
@@ -189,7 +195,6 @@
                 </div>
             </div>
         </section>
-
 
         <!-- CLOSING SECTION -->
         <section class="about-closing">
@@ -214,7 +219,6 @@
         </section>
 
     </main>
-
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -258,8 +262,10 @@
 
     </footer>
 
-
     <script src="script.js"></script>
 
 </body>
 </html>
+
+<!-- STICKY HEADER -->
+

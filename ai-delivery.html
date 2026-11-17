@@ -13,7 +13,19 @@
             <a href="index.html" class="logo">
                 <img src="assets/images/teneyasiree-logo.png" alt="Teneyasiree Logo">
             </a>
-            <nav class="navbar" aria-label="Main navigation">
+
+            <!-- HAMBURGER BUTTON -->
+            <button class="menu-toggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="site-navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="navbar" id="site-navigation" aria-label="Main navigation" aria-label="Main navigation">
                 <a href="index.html">Home</a>
                 <a href="about.html">About Us</a>
                 <a href="ai-delivery.html" class="active" aria-current="page">AI Delivery</a>
@@ -25,6 +37,8 @@
                 <a href="contact.html" class="nav-button">Get in Touch</a>
             </nav>
         </div>
+
+        <div class="menu-backdrop" aria-hidden="true"></div>
     </header>
 
     <main class="ai-delivery-page">
@@ -100,3 +114,6 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+<!-- STICKY HEADER -->
+
